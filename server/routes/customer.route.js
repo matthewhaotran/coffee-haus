@@ -2,13 +2,13 @@ const router = require('express').Router();
 const db = require('../models');
 
 router.get('/', function (req, res) {
-  db.Note.findAll().then(function (customers) {
+  db.Customer.findAll().then(function (customers) {
     res.json(customers);
   })
 });
 
 router.get('/:id/', function (req, res) {
-  db.Note.findById(req.params.id).then(function (customer) {
+  db.Customer.findById(req.params.id).then(function (customer) {
     if (customer === null) {
       res.sendStatus(404);
     } else {
@@ -18,27 +18,27 @@ router.get('/:id/', function (req, res) {
 });
 
 router.post('/', function (req, res) {
-  const note = db.Note.build(req.body);
+  const customer = db.Customer.build(req.body);
 
-  note.save().then(function (newCustomer) {
+  customer.save().then(function (newCustomer) {
     res.send(newCustomer);
   });
 });
 
 router.put('/:id', function (req, res) {
-  db.Note.findById(req.params.id).then(function (customer) {
-    note.update(req.body).then(function () {
+  db.Customer.findById(req.params.id).then(function (customer) {
+    customer.update(req.body).then(function () {
       res.sendStatus(204);
     });
   });
 });
 
 router.delete('/:id', function (req, res) {
-  db.Note.findById(req.params.id).then(function (customer) {
-    if (note === null) {
+  db.Customer.findById(req.params.id).then(function (customer) {
+    if (customer === null) {
       res.sendStatus(404);
     } else {
-    note.destroy().then(function () {
+    customer.destroy().then(function () {
       res.sendStatus(200);
     });
     }

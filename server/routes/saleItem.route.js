@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 
 router.get('/:id/', function (req, res) {
   db.SaleItem.findById(req.params.id).then(function (saleItem) {
-    if (drink === null) {
+    if (saleItem === null) {
       res.sendStatus(404);
     } else {
       res.json(saleItem);
@@ -20,7 +20,7 @@ router.get('/:id/', function (req, res) {
 router.post('/', function (req, res) {
   const saleItem = db.SaleItem.build(req.body);
 
-  drink.save().then(function (newSaleItem) {
+  saleItem.save().then(function (newSaleItem) {
     res.send(newSaleItem);
   });
 });
