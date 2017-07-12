@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
   const product = db.Product.build(req.body);
 
   product.save().then(function (newProduct) {
-    res.send(newProduct);
+    res.status(201).json(newProduct);
   });
 });
 

@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
   const saleItem = db.SaleItem.build(req.body);
 
   saleItem.save().then(function (newSaleItem) {
-    res.send(newSaleItem);
+    res.status(201).json(newSaleItem);
   });
 });
 

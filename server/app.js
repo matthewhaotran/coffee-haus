@@ -12,8 +12,6 @@ const db = require('./models');
 app.use(express.static(`${__dirname}/../dist`));
 app.use(bodyParser.json());
 
-app.use('/api', require('./api'));
-
 app.use('/api/customer', customerRoute);
 app.use('/api/product', productRoute);
 app.use('/api/sale', saleRoute);
@@ -21,6 +19,10 @@ app.use('/api/saleItem', saleItemRoute);
 
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/../dist/index.html`);
+});
+
+app.get('/#customer', (req, res) => {
+  res.sendFile(`${__dirname}/../dist/customer.html`);
 });
 
 module.exports = app;
