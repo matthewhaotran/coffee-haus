@@ -1,0 +1,12 @@
+<div class="row">
+    <div class="col-md-3" ng-repeat="customer in customersGridCtrl.customers">
+        <div class="panel panel-default">
+            <div class="panel-heading text-center">{{customer.firstName}} {{customer.lastName}}</div>
+            <div class="panel-body">
+                <p>Telephone: {{customer.telephone  || 'N/A'}}</p>
+                <p>E-mail: {{customer.email || 'N/A'}}</p>
+                <button class="btn btn-primary" ui-sref="customer-detail({id : customer.id})"><i class="fa fa-edit"></i></button>
+                <button class="btn btn-danger" ng-click="customersGridCtrl.remove(customer)"><i class="fa fa-trash"></i></button>
+        </div>
+    </div>
+</div>
