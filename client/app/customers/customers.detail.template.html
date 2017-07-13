@@ -1,3 +1,5 @@
+<pre>{{customersDetailCtrl.customer | json}}</pre>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         Edit Customer
@@ -13,8 +15,11 @@
         </div>
     </div>
     <div class="panel-footer clearfix">
-        <button class="btn btn-success pull-right" ng-click="customersDetailCtrl.save(customersDetailCtrl.customer)">
+        <button ng-show="customersDetailCtrl.customer.id != null" class="btn btn-success pull-right" ng-click="customersDetailCtrl.save(customersDetailCtrl.customer)">
             <i class="fa fa-save"></i> Save Customer
+        </button>
+        <button ng-hide="customersDetailCtrl.customer.id != null" class="btn btn-success pull-right" ng-click="customersDetailCtrl.create(customersDetailCtrl.customer)">
+            <i class="fa fa-save"></i> Create Customer
         </button>
     </div>
 </div>
