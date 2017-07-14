@@ -12,7 +12,6 @@
         var vm = this;
         vm.save = save;
         vm.create = create;
-        vm.saveOrCreate = saveOrCreate;
 
         activate();
 
@@ -42,17 +41,10 @@
                 .create(customer)
                 .then(function(customer) {
                     vm.customer = customer;
+                    alert('You created a customer!');
+                    $state.go('customer-grid');
                 })
         }
-
-        function saveOrCreate (customer) {
-            if(customer.id === null) {
-                create(customer);
-            } else {
-                update(customer);
-            }
-        }
-
         
     }
 })();

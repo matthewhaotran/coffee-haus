@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Edit Drink
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="form-group col-md-3">
+                <label for="">Drink name: </label>
+                <input type="text" class="form-control" ng-model="productsDetailCtrl.product.name">
+            </div>
+            <div class="form-group col-md-5">
+                <label for="">Description: </label>
+                <input type="text" class="form-control" ng-model="productsDetailCtrl.product.description">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">Drink Cost: </label>
+                <input type="text" class="form-control" ng-model="productsDetailCtrl.product.cost">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">Price Of Drink: </label>
+                <input type="text" class="form-control" ng-model="productsDetailCtrl.product.price">
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer clearfix">
+        <button ng-show="productsDetailCtrl.product.id != null" class="btn btn-success pull-right" ng-click="productsDetailCtrl.save(productsDetailCtrl.product)">
+            <i class="fa fa-save"></i> Save Drink
+        </button>
+        <button ng-hide="productsDetailCtrl.product.id != null" class="btn btn-success pull-right" ng-click="productsDetailCtrl.create(productsDetailCtrl.product)">
+            <i class="fa fa-save"></i> Create Drink
+        </button>
+    </div>
+</div>

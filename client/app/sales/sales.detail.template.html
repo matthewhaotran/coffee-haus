@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Edit Drink
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="form-group col-md-4">
+                <label for="">Date: </label>
+                <input type="text" class="form-control" ng-model="salesDetailCtrl.sale.date">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="">Customer ID: </label>
+                <input type="text" class="form-control" ng-model="salesDetailCtrl.sale.customerId">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="">Total Price: </label>
+                <input type="text" class="form-control" ng-model="salesDetailCtrl.sale.totalPrice">
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer clearfix">
+        <button ng-show="salesDetailCtrl.sale.id != null" class="btn btn-success pull-right" ng-click="salesDetailCtrl.save(salesDetailCtrl.sale)">
+            <i class="fa fa-save"></i> Save Sale
+        </button>
+        <button ng-hide="salesDetailCtrl.sale.id != null" class="btn btn-success pull-right" ng-click="salesDetailCtrl.create(salesDetailCtrl.sale)">
+            <i class="fa fa-save"></i> Create Sale
+        </button>
+    </div>
+</div>

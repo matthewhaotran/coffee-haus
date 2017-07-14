@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <button class="btn btn-success btn-lg btn-block" ui-sref="product-detail">
+                Create New Drink
+            </button>
+        </div>
+    </div>
+    <hr>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th><h3>Drink Name</h3></th>
+            <th><h3>Description</h3></th>
+            <th><h3>Drink Cost</h3></th>
+            <th><h3>Drink Sale Price</h3></th>
+            <th><h3>Actions</h3></th>
+        </tr>
+        <tr ng-repeat="product in productsGridCtrl.products">
+            <td>{{product.name}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.cost}}</td>
+            <td>{{product.price}}</td>
+            <td>
+                <div class="panel-body">
+                    <button class="btn btn-primary" ui-sref="product-detail({id : product.id})"><i class="fa fa-edit"></i></button>
+                    <button class="btn btn-danger" ng-click="productsGridCtrl.remove(product)"><i class="fa fa-trash"></i></button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

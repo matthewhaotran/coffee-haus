@@ -5,9 +5,9 @@
         .module('app.customers')
         .controller('CustomersGridController', CustomersGridController)
 
-    CustomersGridController.$inject = ['customersFactory'];
+    CustomersGridController.$inject = ['customersFactory', '$state'];
 
-    function CustomersGridController(customersFactory) {
+    function CustomersGridController(customersFactory, $state) {
         /* jshint validthis:true */
         var vm = this;
         vm.remove = remove;
@@ -27,6 +27,7 @@
                 .remove(customer)
                 .then(function() {
                     alert('You deleted the customer!');
+                    activate();
                 });
 
         }

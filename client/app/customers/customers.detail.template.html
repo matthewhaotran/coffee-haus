@@ -1,17 +1,41 @@
-<pre>{{customersDetailCtrl.customer | json}}</pre>
-
 <div class="panel panel-default">
     <div class="panel-heading">
         Edit Customer
     </div>
     <div class="panel-body">
-        <div class="form-group">
-            <label for="">First Name: </label>
-            <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.firstName">
-        </div>
-        <div class="form-group">
-            <label for="">Last Name: </label>
-            <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.lastName">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="">First Name: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.firstName">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Last Name: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.lastName">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">E-mail: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Telephone Number: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.telephone">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">Address: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.address1">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">City: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.city">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">State: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.state">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="">Zip: </label>
+                <input type="text" class="form-control" ng-model="customersDetailCtrl.customer.zip">
+            </div>
         </div>
     </div>
     <div class="panel-footer clearfix">

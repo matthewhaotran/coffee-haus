@@ -1,5 +1,5 @@
 .navbar {
-    background-color: maroon;
+    background-color: rgb(74, 54, 47);
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
@@ -15,14 +15,41 @@
 }
 
 .jumbotron {
-    background-color: #cc9966;
-    color: white;
+    background-color: rgb(183, 174, 143);
+    color: rgb(74, 54, 47);
 }
  body {
-     background-color: #cc9966;
+     background-color: rgb(183, 174, 143);
  }
 
  .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    color: #555;
-    background-color: pink;
+    background-color: #A2825C;
+}
+
+.table {
+    background-color: #f2f2f2;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #cc9966;
+}
+
+.navbar-default .navbar-brand {
+    color: #cc9966;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: white;
+}
+
+.navbar-default .navbar-brand {
+    color: white !important;
+}
+
+th, .panel-heading {
+    background-color: #A2825C !important;
+}
+
+.panel-heading {
+    color: white !important;
 }
