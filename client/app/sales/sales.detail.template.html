@@ -1,29 +1,35 @@
-<div class="panel panel-default">
+<div class="panel pane-defaul">
     <div class="panel-heading">
-        Edit Drink
+        Edit Sale
     </div>
     <div class="panel-body">
-        <div class="row">
-            <div class="form-group col-md-4">
-                <label for="">Date: </label>
-                <input type="text" class="form-control" ng-model="salesDetailCtrl.sale.date">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="">Customer ID: </label>
-                <input type="text" class="form-control" ng-model="salesDetailCtrl.sale.customerId">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="">Total Price: </label>
-                <input type="text" class="form-control" ng-model="salesDetailCtrl.sale.totalPrice">
-            </div>
+        <div class="form-group">
+            <label for="">Sale Date: </label>
+            <input type="text" class="form-control" ng-model="salesDetailCtrl.sale.date">
         </div>
-    </div>
-    <div class="panel-footer clearfix">
-        <button ng-show="salesDetailCtrl.sale.id != null" class="btn btn-success pull-right" ng-click="salesDetailCtrl.save(salesDetailCtrl.sale)">
-            <i class="fa fa-save"></i> Save Sale
-        </button>
-        <button ng-hide="salesDetailCtrl.sale.id != null" class="btn btn-success pull-right" ng-click="salesDetailCtrl.create(salesDetailCtrl.sale)">
-            <i class="fa fa-save"></i> Create Sale
-        </button>
+        <hr>
+        <h3>Add/Remove Drinks</h3>
+        <button 
+            class="btn btn-primary btn-drink" 
+            ng-repeat="product in salesDetailCtrl.products"
+            ng-click="salesDetailCtrl.addProduct(product)">
+            {{product.name}} (<small>{{product.price | currency}}</small>)</button>
+        <hr>
+        <table class="table table-condensed table-striped">
+            <thead>
+                <tr>
+                    <th>Quantity</th>
+                    <th>Product Name</th>
+                    <th>Sale Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="saleItem in salesDetailCtrl.sale.saleItems">
+                    <td><input type="number" ng-model="saleItem.quantity" class="form-control form-quantity"></td>
+                    <td>{{saleItem.product.name}}</td>
+                    <td>{{saleItem.product.price}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

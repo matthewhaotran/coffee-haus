@@ -1,27 +1,21 @@
-<div class="row">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <button class="btn btn-success btn-lg btn-block" ui-sref="sale-detail">
-                New Sale
-            </button>
-        </div>
-    </div>
-    <hr>
-    <table class="table table-bordered table-hover">
-        <tr class="success">
+<table class="table ">
+    <thead>
+        <tr>
             <th>Date</th>
             <th>Customer</th>
+            <th>Total Sale Price</th>
+            <th>Quantity</th>
             <th>Actions</th>
         </tr>
-        <tr ng-repeat="sale in salesGridCtrl.sales">
-            <td>{{sale.date}}</td>
-            <td>{{sale.customerId}}</td>
-            <td>
-                <div class="panel-body">
-                    <button class="btn btn-primary" ui-sref="sale-detail({id : sale.id})"><i class="fa fa-edit"></i></button>
-                    <button class="btn btn-danger" ng-click="salesGridCtrl.remove(sale)"><i class="fa fa-trash"></i></button>
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
+    </thead>
+    <tr ng-repeat="sale in salesGridCtrl.sales">
+        <td>{{sale.date |date}}</td>
+        <td>{{sale.customer.firstName}} {{sale.customer.lastName}}</td>
+        <td>{{sale.totalPrice | currency}}</td>
+        <td>{{sale.saleItems.length}}</td>
+        <td width="9%">
+            <button class="btn btn-primary" ui-sref="sale-detail({id : sale.id})"><i class="fa fa-edit"></i></button>
+            <button class="btn btn-danger" ng-click="salesGridCtrl.remove(sale)"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+</table>

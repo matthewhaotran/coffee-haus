@@ -53,3 +53,12 @@ th, .panel-heading {
 .panel-heading {
     color: white !important;
 }
+
+.btn-drink {
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.form-quantity {
+    width: 7em;
+}

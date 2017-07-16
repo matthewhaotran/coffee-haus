@@ -16,7 +16,16 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     SaleItem.associate = function (models) {
+        
+        models.SaleItem.belongsTo(models.Sale, {
+            as: 'sale',
+            foreignKey: 'saleId'
+        });
 
+        models.SaleItem.belongsTo(models.Product, {
+            as: 'product',
+            foreignKey: 'productId'
+        });
     };
 
     return SaleItem;

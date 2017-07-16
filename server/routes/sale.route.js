@@ -2,13 +2,33 @@ const router = require('express').Router();
 const db = require('../models');
 
 router.get('/', function (req, res) {
-  db.Sale.findAll().then(function (sales) {
+  db.Sale.findAll({
+    include: [{
+      model: db.Customer,
+      as: 'customer'
+    }, {
+      model: db.SaleItem,
+      as: 'saleItems'
+    }]
+  }).then(function (sales) {
     res.json(sales);
   })
 });
 
 router.get('/:id/', function (req, res) {
-  db.Sale.findById(req.params.id).then(function (sale) {
+  db.Sale.findById(req.params.id, {
+    include: [{
+      model: db.Customer,
+      as: 'customer'
+    }, {
+      model: db.SaleItem,
+      as: 'saleItems',
+      include: [{
+        model: db.Product,
+        as: 'product'
+      }]
+    }]
+  }).then(function (sale) {
     if (sale === null) {
       res.sendStatus(404);
     } else {
