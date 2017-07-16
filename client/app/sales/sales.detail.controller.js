@@ -5,14 +5,15 @@
         .module('app.sales')
         .controller('SalesDetailController', SalesDetailController)
 
-    SalesDetailController.$inject = ['salesFactory', '$stateParams', '$state', 'productsFactory', 'saleitemFactory'];
+    SalesDetailController.$inject = ['salesFactory', '$stateParams', '$state', 'productsFactory', 'saleitemFactory', 'customersFactory'];
 
-    function SalesDetailController(salesFactory, $stateParams, $state, productsFactory, saleitemFactory) {
+    function SalesDetailController(salesFactory, $stateParams, $state, productsFactory, saleitemFactory, customersFactory) {
         /* jshint validthis:true */
         var vm = this;
         vm.save = save;
         vm.create = create;
         vm.addProduct = addProduct
+        vm.deleteProduct = deleteProduct;
 
         activate();
 
@@ -25,16 +26,24 @@
 
             productsFactory
                 .getAll()
-                .then(function(products) {
+                .then(function (products) {
                     vm.products = products;
-                }); 
+                });
+
+            customersFactory
+                .getAll()
+                .then(function (customers) {
+                    vm.customers = customers;
+                });
         }
 
         function save(sale) {
+            sale.totalPrice = sale.saleItems.reduce(function(acc, current) {
+                return acc + parseFloat(current.product.price);
+            }, 0);
             salesFactory
                 .update(sale)
                 .then(function (sale) {
-                    alert('You updated the drink!');
                     $state.go('sale-grid');
                 });
         }
@@ -57,11 +66,20 @@
                     productId: product.id,
                     quantity: 1
                 })
-                .then(function() {
+                .then(function () {
                     activate();
                 });
         }
 
-        
+        function deleteProduct(saleItem) {
+            saleitemFactory
+                .remove(saleItem)
+                .then(function () {
+                    var indexOf = vm.sale.saleItems.indexOf(saleItem);
+                    vm.sale.saleItems.splice(indexOf, 1);
+                });
+        }
+
+
     }
 })();
