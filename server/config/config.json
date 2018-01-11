@@ -1,16 +1,16 @@
 {
   "development": {
     "username": "root",
-    "password": "password12345",
-    "database": "coffeehaus_dev",
+    "password": "Chrispaul3",
+    "database": "coffeehouse_dev",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging": false
   },
   "test": {
     "username": "root",
-    "password": "password12345",
-    "database": "coffeehaus_test",
+    "password": "Chrispaul3",
+    "database": "coffeehouse_test",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging": false
