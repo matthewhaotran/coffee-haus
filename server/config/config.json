@@ -19,7 +19,7 @@
     "username": "b9ee42b8f8db04",
     "password": "9a73dfff",
     "database": "heroku_ab732c1c0df9091",
-    "host": "mysql://b9ee42b8f8db04:9a73dfff@us-cdbr-iron-east-05.cleardb.net/heroku_ab732c1c0df9091?reconnect=true",
+    "host": "us-cdbr-iron-east-05.cleardb.net",
     "dialect": "mysql",
     "logging": false
   }
