@@ -38,9 +38,9 @@ router.delete('/:id', function (req, res) {
     if (customer === null) {
       res.sendStatus(404);
     } else {
-    customer.destroy().then(function () {
-      res.sendStatus(200);
-    });
+      customer.destroy().then(function () {
+        res.sendStatus(200);
+      });
     }
   });
 });
