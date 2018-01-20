@@ -4,7 +4,7 @@ A web application that serves as a POS (point of sale) system for a small traffi
 
 ## Getting Started
 
-Clone this repo
+Clone this repository
 
 ### Prerequisites
 
