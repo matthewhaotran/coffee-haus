@@ -1,0 +1,22 @@
+{
+    "development": {
+      "username": "b9ee42b8f8db04",
+      "password": "9a73dfff",
+      "database": "heroku_ab732c1c0df9091",
+      "host": "us-cdbr-iron-east-05.cleardb.net'",
+      "dialect": "mysql",
+      "logging": false
+    },
+    "test": {
+      "username": "root",
+      "password": "password12345",
+      "database": "coffeehaus_test",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "logging": false
+    },
+    "production": {
+      "useEnvVariables": true
+    }
+  }
+  
