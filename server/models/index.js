@@ -18,17 +18,18 @@ const sequelize = new Sequelize('heroku_ab732c1c0df9091', 'b9ee42b8f8db04', '9a7
     idle: 10000
   },
   // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
-  operatorsAliases: false
+  operatorsAliases: false,
+  logging: false
 });
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+// sequelize
+//   .authenticate()
+//   .then(() => {
+//     console.log('Connection has been established successfully.');
+//   })
+//   .catch(err => {
+//     console.error('Unable to connect to the database:', err);
+//   });
 
 fs
   .readdirSync(__dirname)
@@ -50,6 +51,6 @@ Object.keys(db).forEach(function(modelName) {
 sequelize.sync();
 
 db.sequelize = sequelize;
-db.Sequelize = Sequelize;
+// db.Sequelize = Sequelize;
 
 module.exports = db;
