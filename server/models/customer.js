@@ -14,12 +14,12 @@ module.exports = function (sequelize, DataTypes) {
         isVip: DataTypes.BOOLEAN
     });
 
-    // Customer.associate = function (models) {
-        // models.Customer.hasMany(models.Sale, {
-        //     as: 'sales',
-        //     foreignKey: 'customerId'
-        // });
-    // };
+    Customer.associate = function (models) {
+        models.Customer.hasMany(models.Sale, {
+            as: 'sales',
+            foreignKey: 'customerId'
+        });
+    };
 
     return Customer;
 };
