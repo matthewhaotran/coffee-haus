@@ -6,10 +6,10 @@ const saleRoute = require('./routes/sale.route');
 // const saleItemRoute = require('./routes/saleItem.route');
 const db = require('./models');
 const app = express();
-
+app.use(bodyParser.json());
 // app.use(express.static(`${__dirname}`));
 app.use(express.static(`${__dirname}/../dist`));
-app.use(bodyParser.json());
+
 app.use('/api/customer', customerRoute);
 app.use('/api/product', productRoute);
 app.use('/api/sale', saleRoute);
