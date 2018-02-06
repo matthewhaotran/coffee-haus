@@ -7,8 +7,8 @@ const saleRoute = require('./routes/sale.route');
 const db = require('./models');
 const app = express();
 
-app.use(express.static(`${__dirname}`));
-// app.use(express.static(`${__dirname}/../dist`));
+// app.use(express.static(`${__dirname}`));
+app.use(express.static(`${__dirname}/../dist`));
 app.use(bodyParser.json());
 app.use('/api/customer', customerRoute);
 app.use('/api/product', productRoute);
@@ -16,7 +16,7 @@ app.use('/api/sale', saleRoute);
 // app.use('/api/saleItem', saleItemRoute);
 
 app.get('/', function (req, res) {
-	res.sendFile(__dirname + '/client/index.html');
+	res.sendFile(__dirname + '/dist/index.html');
 });
 
 module.exports = app;
