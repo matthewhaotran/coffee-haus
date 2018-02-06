@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "gulp build"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
