@@ -15,8 +15,8 @@ app.use('/api/product', productRoute);
 app.use('/api/sale', saleRoute);
 // app.use('/api/saleItem', saleItemRoute);
 
-app.get('/', function (req, res) {
-	res.sendFile(`${__dirname}/dist/index.html`);
-});
+app.get('/', (req, res) => {
+	res.sendFile(`${__dirname}/../dist/index.html`);
+  });
 
 module.exports = app;
