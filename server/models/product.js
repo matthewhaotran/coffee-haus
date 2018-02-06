@@ -9,10 +9,10 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Product.associate = function (models) {
-        // models.Product.hasMany(models.SaleItem, {
-        //     as: 'saleItems ',
-        //     foreignKey: 'productId'
-        // });
+        models.Product.hasMany(models.SaleItem, {
+            as: 'saleItems ',
+            foreignKey: 'productId'
+        });
     };
 
     return Product;
