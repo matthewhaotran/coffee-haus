@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const bodyParser = require('body-parser');
 const customerRoute = require('./routes/customer.route');
 const productRoute = require('./routes/product.route');
 const saleRoute = require('./routes/sale.route');
