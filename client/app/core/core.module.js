@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.module', [
+    angular.module('app.core', [
         // Angular modules
 
         // Custom modules

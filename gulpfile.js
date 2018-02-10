@@ -29,11 +29,12 @@ gulp.task('build:js', () =>
   gulp
   .src([
     'node_modules/jquery/dist/jquery.js',
+    'node_modules/angular/angular.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
     'client/**/*.module.js',
     'client/**/*.js'
   ])
-  .pipe($.concat('bundle.min.js'))
+  // .pipe($.concat('bundle.min.js'))
   // .pipe($.uglify().on('error', (err) => {
   //   console.log(`Error: ${err}`);
   // }))
