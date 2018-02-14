@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="css/bundle.min.css">
 </head>
 
-<body>
+<body ng-controller="customerController as customerCtrl" ng-cloak>
     <div class="jumbotron">
         <h1>Coffeehouse</h1>
         <p>A web application to serve as a point of sale system for a small volume coffee shop</p>
     </div>
-    <p>{{customerController.message}}</p>
+    <p>{{customerCtrl.message}}</p>
     <script src="js/bundle.min.js"></script>
 
 </body>
