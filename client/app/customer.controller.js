@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.core')
+        .module('app')
         .controller('customerController', customerController)
 
     // customerController.$inject = ['$location'];
@@ -10,10 +10,10 @@
     function customerController() {
         /* jshint validthis:true */
         var vm = this;
-        vm.message = "hello";
+        vm.message = "Test angular";
 
         activate();
 
         function activate() { }
     }
-})();
+})();   
