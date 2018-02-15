@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app')
+        .module('app.core')
         .controller('customerController', customerController)
 
     // customerController.$inject = ['$location'];
