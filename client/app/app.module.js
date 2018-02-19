@@ -3,10 +3,11 @@
 
     angular.module('app', [
         // Angular modules
-        'app.core'
+        'app.core',
         // Custom modules
 
         // 3rd Party Modules
+        'ui.router'
 
     ]);
 })();
