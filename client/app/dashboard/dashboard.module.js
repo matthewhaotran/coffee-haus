@@ -1,9 +1,8 @@
 (function () {
     'use strict';
 
-    angular.module('app.core', [
+    angular.module('app.dashboard', [
         // Angular modules
-        'app.dashboard',
 
         // Custom modules
 
